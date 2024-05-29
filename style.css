@@ -1,0 +1,138 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    display: flex;
+    width: 100%; /* Используем 100% для адаптивного дизайна */
+    height: 100px;
+    justify-content: space-around;
+    align-content: center;
+    background: linear-gradient(90deg, #4d6c96 0%, #f7f3de 100%);
+    box-sizing: border-box; /* Чтобы padding не увеличивал размер header */
+}
+
+h1 {
+    color: white; /* Цвет текста, чтобы он был виден на фоне */
+    margin: 0; /* Убираем стандартные отступы */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo img {
+    background: url("/img/logo.png");
+    width: 370px;
+    height: 190px;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Промежуток между элементами навигации */
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #f7f3de; /* Цвет ссылки при наведении */
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 1080px; /* Устанавливаем высоту main */
+    background-color: #f7f3de;
+}
+
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Отправляем контейнер SVG на задний план */
+    overflow: hidden;
+}
+
+.svg-background {
+    position: absolute;
+    pointer-events: none; /* Чтобы SVG не перекрывали клики по контенту */
+}
+
+.svg1 {
+    top: 0;
+    left: 0;
+}
+
+.svg2 {
+    bottom: 0;
+    right: 0;
+}
+
+.containers {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Повышаем z-index содержимого, чтобы оно было над SVG */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Распределяем элементы по бокам */
+}
+
+.boxed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 2113px;
+    height: 288px;
+    letter-spacing: -32px;
+}
+
+.titttle {
+    font-size: 100px; /* Установите нужный размер шрифта */
+    margin: 0 10px; /* Промежуток между буквами */
+    color: black;
+}
+
+.line {
+    border: 6px solid #000;
+    width: 488px;
+    height: 0px;
+}
+
+@media (max-width: 1024px) {
+    /* Применяем стили для медиа-запроса, когда ширина экрана меньше 768px */
+    .svg-background {
+        opacity: 0; /* Устанавливаем нулевую прозрачность */
+        transition: opacity 0.5s ease; /* Добавляем плавный переход */
+    }
+}
